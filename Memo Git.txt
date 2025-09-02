@@ -1,0 +1,194 @@
+﻿MEMO GIT
+
+
+Setup : 
+        Changer son nom d’utilisateur et email
+        
+        git config –global user.name “Kyllian Schafer”
+        git config –global user.email “kyllianschafer@gmail.com”
+
+
+        permet de laisser une trace lors de ses action.
+
+
+Créer un Repository : 
+        Le repository est le répertoire de projet sur github
+
+
+        Git init
+
+
+Tracker un fichier : 
+        Git doit suivre un fichier pour pouvoir effectuer ses actions
+
+
+        Git add [Fichier]
+
+
+Vérification du Repository : 
+        On va vérifier si les fichiers sont trackés ou untracked
+
+
+        Git status
+
+
+Modification de fichier : 
+        Si on modifie un fichier il faut de nouveau le “Stage” pour la suite
+
+
+        Git add [Fichier]
+
+
+Etats de fichiers : 
+        Untracked : n’a pas encore été inclus avec git add
+        Tracked: a été inclus avec git add
+        Unstaged : fichier modifié mais pas Staged
+        Staged : fichier modifié prêt à être commit
+
+
+        Le track se fait lors de l’ajout du fichier pour la première fois
+
+
+        Le Stage s’effectue à chaque modification
+
+
+Commande plus risquée mais plus rapide : git add –a
+Cette commande effectue git add sur tous les fichiers
+
+
+Commit : 
+        Le commit permet de “versionner” son projet
+        
+        git commit -m “message”
+
+
+        Le commit va sauvegarder l'état de vos fichiers Staged.
+
+
+Voir les commits : 
+        On va faire beaucoup de commits, on peut voir l’historique
+
+
+        git log ou git log –oneline (pour être plus court)
+
+
+        On peut voir les changements lors des commits
+
+
+        git log –stat
+
+
+Tag : 
+        On peut “nommer” sa version avec un tag
+
+
+        cette commande stock votre nom et ajoute un message au tag
+
+
+        git tag -a v1.0 -m “descriptif de la version”
+
+
+
+
+        Pour tag une version spécifique il faut aller chercher son hash
+        Il est présent lors du commit
+
+
+        git tag v1.0 [hash]
+
+
+        On peut ensuite voir les détails d’une version avec 
+
+
+        git show v1.0
+
+
+        Supprimer un tag : 
+
+
+        git tag -d v1.0
+
+
+        Si vous avez besoin de changer le tag vers un autre commit
+
+
+        git tag -f v1.0 [hash]
+
+
+
+
+
+
+
+
+Stash
+        Dans le cas où l’on doit travailler sur une ancienne version
+        Si nous étions en modification pour la version suivante
+        On peut “sauvegarder” ses modifications pour plus tard
+
+
+        git stash push -m “message”
+
+
+        Notre session est stockée en haut d’une pile Stash
+        On peut la consulter avec 
+
+
+        git stash list
+
+
+        voir les changements apportés par le stash : 
+
+
+        git stash show -p
+
+
+        Restaurer le dernier stash : 
+
+
+        git stash apply ou git stash apply stash@{n]
+
+
+        “n” étant l’index du stash dans la pile
+
+
+        Si on veut reprendre le stash et le sortir de la pile on utilise
+
+
+        Git stash pop
+
+
+        Si tu dois supprimer un stash
+
+
+        Git stash drop stash@{n]
+
+
+        Si tu veux supprimer tous les stash
+
+
+        git stash clear
+
+
+Historique : 
+        On a déjà vu git log précédemment
+        voici de nouvelles commandes utiles : 
+
+
+        Voir un commit spécifique selon son hash
+
+
+        git show [hash]
+        
+        
+
+
+voir les modifications entre son avancement et un commit
+
+
+        git diff ou git diff –staged (seulement pour les fichiers staged)
+        
+        différence entre 2 commits : 
+
+
+        git diff [hash1] [hash2]
