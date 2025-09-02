@@ -146,7 +146,7 @@ Stash
         Restaurer le dernier stash : 
 
 
-        git stash apply ou git stash apply stash@{n}
+        git stash apply ou git stash apply stash@{n]
 
 
         “n” étant l’index du stash dans la pile
@@ -161,7 +161,7 @@ Stash
         Si tu dois supprimer un stash
 
 
-        Git stash drop stash@{n}
+        Git stash drop stash@{n]
 
 
         Si tu veux supprimer tous les stash
@@ -180,7 +180,8 @@ Historique :
 
         git show [hash]
         
-        
+
+
 
 
 voir les modifications entre son avancement et un commit
@@ -192,3 +193,82 @@ voir les modifications entre son avancement et un commit
 
 
         git diff [hash1] [hash2]
+
+
+L’aide : 
+        Git inclut des commandes d’aide
+        La commande générale qui montre les commandes
+
+
+        Git help –all
+        Git help  -g (guides et concepts)
+
+
+        Pour l’aide sur une commande spécifique
+
+
+        Git help [Commande]
+
+
+Branches:
+
+
+        Les branches sont importantes pour développer en environnement
+        isolé.
+        
+        Git branch [nom]
+
+
+        Pour voir nos branches
+
+
+        Git branch
+
+
+        Pour se se déplacer entre différentes branches ou versions 
+
+
+        Git checkout [version/hash/branche]
+
+
+        On peut par la suite commit la branche !
+
+
+        Ou la supprimer avec
+
+
+        Git branch -d [nom]
+
+
+        On peut aussi renommer une branche
+
+
+        Git branch -m [ancien nom] [nouveau nom]
+
+
+Merging : 
+        Une fois les modifications apportées à la branche on va les ajouter au main
+        On se repositionne sur le main puis on merge la branche
+
+
+        Git merge [branche]
+
+
+        Si on a besoin de supprimer la branche après merge
+
+
+        Git merge -d [branche]
+
+
+        Si on veut créer un commit du merge
+        
+git merge --no-ff [branche]
+
+Si on veut plutôt avoir les changements combinés en un seul merge
+
+
+git merge --squash [branche]
+
+
+Pour annuler un merge en cours (en cas de conflit par exemple)
+git merge --abort [branche]
