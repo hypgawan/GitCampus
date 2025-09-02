@@ -146,7 +146,7 @@ Stash
         Restaurer le dernier stash : 
 
 
-        git stash apply ou git stash apply stash@{n]
+        git stash apply ou git stash apply stash@{n}
 
 
         “n” étant l’index du stash dans la pile
@@ -161,7 +161,7 @@ Stash
         Si tu dois supprimer un stash
 
 
-        Git stash drop stash@{n]
+        Git stash drop stash@{n}
 
 
         Si tu veux supprimer tous les stash
