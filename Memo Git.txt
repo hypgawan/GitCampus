@@ -271,4 +271,80 @@ git merge --squash [branche]
 
 
 Pour annuler un merge en cours (en cas de conflit par exemple)
-git merge --abort [branche]
+
+
+        git merge –abort [branch]
+
+
+
+
+Conflit lors du merge
+Il faut modifier les fichiers où le conflit est présent
+
+
+Git restore
+
+
+        Si avant un commit une modification ne plait pas on peut annuler le staging
+
+
+        git restore [fichier]
+
+
+le fichier sera de retour dans son état initial
+
+
+
+
+GITHUB
+        Sur github on peut créer un “remote repository” c’est un dossier en ligne
+        On pourra interagir avec depuis notre machine.
+
+
+SSH : 
+        On va générer sa clef publique et privée pour lier notre repo local et github
+
+
+        activer SSH : 
+        eval $(ssh-agent -s)
+
+
+        générer la paire de clés : 
+        ssh-keygen -t rsa -b 4096 -c [email]
+
+
+        On va ensuite ajouter la clé à l’agent ssh
+        ssh-add [chemin vers clé privée]
+        Lister les clés SSH : 
+        ssh-add -l
+
+
+        supprimer une clé d’un agent ssh
+        ssh-add -d [chemin vers clé privée]
+
+
+        copier sa clé SSH pour la mettre sur Github attention on utilise la clé publique
+        clip < [chemin vers clé publique]
+
+
+        On collera la clé publique sur notre profil github 
+-> section SSH and GPG keys
+-> new SSH key
+On pourra donner un nom à la clé pour s’y retrouver
+
+
+Dans notre repository sur github on passe en SSH (au lieu de HTTPS)
+
+
+Dans gitbash : 
+ssh -T git@github.com
+
+        pour tester l’authentification
+
+
+        puis on ajoute une origine à distance (remote origin)
+        git remote add origin [lien SSH du repository]
+
+
+        on pourras le modifier avec
+        git remote set-url origin [lien SSH du repository]
