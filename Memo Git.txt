@@ -348,3 +348,105 @@ ssh -T git@github.com
 
         on pourras le modifier avec
         git remote set-url origin [lien SSH du repository]
+
+
+Modification depuis github : 
+        On peut modifier un fichier depuis github.
+        Ensuite on peut le commit sur une branche ou le main
+
+
+Remote Pull : 
+        On va pouvoir récupérer les fichiers sur github (le cloud) pour
+        les importer en local. C’est un pull.
+
+
+On peut déjà récupérer ce que d’autres personnes ont pu faire dans le
+repository
+
+
+git fetch        
+
+
+        Puis regarder l’état du projet avec git status.
+        On saura sur combien de commit de retard nous sommes par exemple.
+
+
+
+
+        Pour voir les modifications apportés au remote on peut faire : 
+        
+        git log origin/main
+
+
+        git diff origin/main
+        
+        Avec toutes ces informations nous pouvons faire un merge qui permet de
+        ramener en local les modifications apportées au remote.
+
+
+        git merge origin/main
+
+
+        Une façon vraiment plus simple et rapide de fetch et merge est le pull
+        le pull fait les deux en même temps et est plus rapide.
+
+
+        git pull origin
+
+
+
+
+Remote push : 
+        Après avoir pull on peut ensuite envoyer les modifications locales au remote.
+        Le push permet d’exporter notre commit vers le remote repository
+
+
+        git push origin
+
+
+        Les tags ne sont pas push, il faut aussi les push, soit tous ou soit un
+        spécifique
+
+
+        git push –tags
+
+
+        git push origin v1.0
+
+
+Pull une branche : 
+Pour pull une branche il faut d’abord effectuer un premier pull.
+Ensuite on peut se mettre sur la branche avec un checkout
+
+
+git checkout [nombranche]        
+
+
+        retenter un pull à ce niveau pour être certain d'être à jour
+
+
+Push une branche : 
+        On ne peut pas push la branche qu’on a checkout précédemment.
+        on doit en créer une nouvelle avec
+
+
+        git checkout -b [nom branche]
+
+
+        une fois la branche crée, on peut faire les modifications,stage et commit
+        Enfin il suffit de push la branche
+
+
+        git push origin [nom branche]
+
+
+Comment travailler avec github ?
+        L’idée est en plusieurs étapes : 
+
+
+        Créer une branche
+        Faire les commits
+        Pull request (demande aux autres de regarder notre cde)
+        Review (discuter par message des modifications)
+        Deploy (tester les changements avant le merge)
+        Merge (ajoute la modification au main)
